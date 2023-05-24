@@ -12,17 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.zolthan31.votacaobbbapi.model.ParametroModel;
 import io.zolthan31.votacaobbbapi.repositories.ParametroRepository;
+import lombok.RequiredArgsConstructor;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/parametros")
 public class ParametroController {
 	
 	
 	private final ParametroRepository repository;
 	
-	public ParametroController(ParametroRepository repository) {
-		this.repository = repository;
-	}
 	
 	@PostMapping("/salvar")
 	public ResponseEntity<ParametroModel> salvar(@RequestBody ParametroModel parametro) {
